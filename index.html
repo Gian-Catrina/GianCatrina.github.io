@@ -8,124 +8,88 @@
 <style>
 body{
     margin:0;
-    font-family: Arial, Helvetica, sans-serif;
-    background:linear-gradient(120deg,#020617,#0f172a);
+    font-family: system-ui, Arial, sans-serif;
     color:white;
+    background: linear-gradient(135deg, #0f172a, #020617, #1e293b);
+    background-size: 400% 400%;
 }
 
-nav{
-    position:fixed;
-    width:100%;
-    padding:20px;
-    backdrop-filter:blur(10px);
-    background:rgba(0,0,0,0.3);
-}
-
-.hero{
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    animation:fade 1.5s ease;
-}
-
-h1{
-    font-size:3rem;
-    margin:0;
-}
-
-.typing{
-    color:#38bdf8;
-    margin-top:10px;
-    font-size:1.3rem;
-    height:30px;
-}
-
-.about{
-    max-width:700px;
+/* container */
+.wrapper{
+    max-width:900px;
     margin:80px auto;
     padding:40px;
+}
+
+/* card */
+.card{
     background:rgba(255,255,255,0.05);
     border-radius:20px;
-    backdrop-filter:blur(10px);
-    animation:fade 2s ease;
+    padding:40px;
+    backdrop-filter: blur(12px);
+    box-shadow:0 20px 60px rgba(0,0,0,0.4);
+}
+
+/* headings */
+h1{
+    margin-top:0;
+    font-size:2.5rem;
+}
+
+h2{
+    margin-top:40px;
+    color:#38bdf8;
+}
+
+/* links */
+a{
+    color:#38bdf8;
+    text-decoration:none;
 }
 
 footer{
-    text-align:center;
-    padding:40px;
+    margin-top:40px;
     opacity:0.6;
-}
-
-@keyframes fade{
-    from{opacity:0;transform:translateY(30px);}
-    to{opacity:1;transform:translateY(0);}
+    font-size:0.9rem;
 }
 </style>
 </head>
 
 <body>
 
-<nav>
-<b>Gian Catrina</b>
-</nav>
+<div class="wrapper">
+<div class="card">
 
-<section class="hero">
-    <h1>Hi, I'm Gian 👋</h1>
-    <div class="typing" id="typing"></div>
-</section>
+<h1>👋 Gian Catrina</h1>
+<p>
+First-year IT specialist in platform development.
+</p>
 
-<section class="about">
-    <h2>About me</h2>
-    <p>
-        I'm currently in my first year of training as an IT apprentice in platform development.
-    </p>
-    <p>
-        In winter, I love skiing in the mountains.  
-        In summer, you'll probably find me riding my motorcycle.
-    </p>
-    <p>
-        When I'm not outside, I'm usually at the gym or learning new tech stuff.
-    </p>
-</section>
+<h2>About me</h2>
+<p>
+In winter I enjoy skiing in the mountains.  
+In summer I like riding my motorcycle.
+</p>
+
+<p>
+When I'm not outside, I'm usually at the gym  
+or learning new tech.
+</p>
+
+<h2>Links</h2>
+<p>
+GitHub:  
+<a href="https://github.com/Gian-Catrina" target="_blank">
+github.com/Gian-Catrina
+</a>
+</p>
 
 <footer>
 © 2026 Gian Catrina
 </footer>
 
-<script>
-const words = [
-"IT Specialist in Training 💻",
-"Platform Development",
-"Future DevOps Engineer 🚀",
-"Always learning"
-];
-
-let i=0;
-let j=0;
-let current="";
-let deleting=false;
-
-function loop(){
-document.getElementById("typing").textContent=current;
-
-if(!deleting && j<words[i].length){
-current+=words[i][j++];
-}
-else if(deleting && j>0){
-current=current.slice(0,--j);
-}
-else{
-deleting=!deleting;
-if(!deleting){i=(i+1)%words.length;}
-}
-
-setTimeout(loop,deleting?40:80);
-}
-loop();
-</script>
+</div>
+</div>
 
 </body>
 </html>
